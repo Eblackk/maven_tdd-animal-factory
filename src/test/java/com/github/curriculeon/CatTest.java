@@ -10,6 +10,7 @@ import java.util.Date;
  * @author leon on 4/19/18.
  */
 public class CatTest {
+
     // TODO - Create tests for `void setName(String name)`
     // TODO - Create tests for `speak`
     // TODO - Create tests for `setBirthDate(Date birthDate)`
@@ -17,7 +18,68 @@ public class CatTest {
     // TODO - Create tests for `Integer getId()`
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
+    @Test
+    public void eatTest() {
+        //Given
+        Food food = new Food();
+        Cat cat = new Cat(null,null,null);
+        int startNumberOfMeals = cat.getNumberOfMealsEaten();
+        int expected = startNumberOfMeals + 1;
 
+        //When
+        cat.eat(food);
+        int actual = cat.getNumberOfMealsEaten();
+
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void speakTest() {
+        //Given
+        String expected = "meow!";
+        Cat cat = new Cat(null, null, null);
+
+        //When
+        String actual = cat.speak();
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void setBirthDate() {
+        //Given
+        Date expectedBirthDate = new Date();
+        Cat cat = new Cat(null, null, null);
+
+        //When
+        cat.setBirthDate(expectedBirthDate);
+        Date actualBirthDate = cat.getBirthDate();
+
+
+        //Then
+        Assert.assertEquals(expectedBirthDate, actualBirthDate);
+
+    }
+
+    @Test
+    public void setNameTest() {
+        //Given name
+        String expectedName = "MidNight";
+
+        // Given create cat
+        Cat cat = new Cat(null, null, null);
+
+        //When cat name sets to CatName
+        cat.setName(expectedName);
+        String actualName = cat.getName();
+
+        //Then
+        Assert.assertEquals(expectedName, actualName);
+
+
+    }
 
     @Test
     public void constructorTest() {

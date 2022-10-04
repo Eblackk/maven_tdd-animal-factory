@@ -9,4 +9,8 @@ public class CatHouseTest {
     // TODO - Create tests for `void remove(Cat cat)`
     // TODO - Create tests for `Cat getCatById(Integer id)`
     // TODO - Create tests for `Integer getNumberOfCats()`
+
+
+
 }
+
