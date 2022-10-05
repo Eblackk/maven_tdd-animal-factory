@@ -1,5 +1,6 @@
 package com.github.curriculeon;
 
+import com.github.curriculeon.animals.Cat;
 import com.github.curriculeon.animals.Dog;
 import com.github.curriculeon.animals.animal_creation.AnimalFactory;
 import org.junit.Assert;
@@ -16,7 +17,18 @@ public class AnimalFactoryTest {
 
     @Test
     public void createCatTest() {
-        
+        //Given
+        String expectedName = "NightNight";
+        Date expectedDate = new Date();
+
+        //When
+        Cat cat = AnimalFactory.createCat(expectedName,expectedDate);
+        String actualName = cat.getName();
+        Date actualDate = cat.getBirthDate();
+
+        //Then
+        Assert.assertEquals(expectedName, actualName);
+        Assert.assertEquals(expectedDate,actualDate);
     }
 
     @Test
