@@ -16,6 +16,24 @@ public class CatHouseTest {
     // TODO - Create tests for `Cat getCatById(Integer id)`
     // TODO - Create tests for `Integer getNumberOfCats()`
 
+    @Test
+    public void getNumberOfCatsTest() {
+        //Given
+        Integer expectedNumberOfCats = CatHouse.getNumberOfCats();
+        Cat expectedCat = new Cat(null, null, null);
+
+
+        //When
+        CatHouse.add(expectedCat);
+        Integer actualNumberOfCats = CatHouse.getNumberOfCats();
+        expectedNumberOfCats = expectedNumberOfCats + 1;
+
+
+
+        //Then
+        Assert.assertEquals(expectedNumberOfCats,actualNumberOfCats);
+    }
+
     @Before
     public void setup() {
         CatHouse.clear();
@@ -25,7 +43,7 @@ public class CatHouseTest {
     public void removeCatByIdTest() {
         //Given
         Integer expectedId = 0;
-        Cat expectedCat = new Cat(null,null,expectedId);
+        Cat expectedCat = new Cat(null, null, expectedId);
         CatHouse.add(expectedCat);
 
         //When
@@ -35,6 +53,7 @@ public class CatHouseTest {
         //Then
         Assert.assertNull(actualCat);
     }
+
     @Test
     public void addCatTest() {
         //Given
