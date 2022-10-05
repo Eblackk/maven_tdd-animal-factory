@@ -22,10 +22,11 @@ public class CatHouseTest {
     }
 
     @Test
-    public void removeCatTest() {
+    public void removeCatByIdTest() {
         //Given
         Integer expectedId = 0;
         Cat expectedCat = new Cat(null,null,expectedId);
+        CatHouse.add(expectedCat);
 
         //When
         CatHouse.remove(expectedCat);
